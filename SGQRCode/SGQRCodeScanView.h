@@ -27,6 +27,8 @@ typedef enum : NSUInteger {
 @interface SGQRCodeScanView : UIView
 /** 扫描样式，默认 ScanAnimationStyleDefault */
 @property (nonatomic, assign) ScanAnimationStyle scanAnimationStyle;
+/** 扫描样式为ScanAnimationStyleDefault时线的高度，默认为12*/
+@property (nonatomic, assign) CGFloat defaultStyleLineHeight;
 /** 扫描线名 */
 @property (nonatomic, copy) NSString *scanImageName;
 /** 边框颜色，默认白色 */

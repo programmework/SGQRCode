@@ -39,6 +39,7 @@
 
 - (void)initialization {
     _scanAnimationStyle = ScanAnimationStyleDefault;
+    _defaultStyleLineHeight = 12.0;
     _borderColor = [UIColor whiteColor];
     _cornerLocation = CornerLoactionDefault;
     _cornerColor = [UIColor colorWithRed:85/255.0f green:183/255.0 blue:55/255.0 alpha:1.0];
@@ -194,7 +195,7 @@
     } else {
         [self addSubview:self.scanningline];
         scanninglineW = scanBorderW;
-        scanninglineH = 12;
+        scanninglineH = _defaultStyleLineHeight;
         scanninglineX = scanBorderX;
         scanninglineY = scanBorderY;
         _scanningline.frame = CGRectMake(scanninglineX, scanninglineY, scanninglineW, scanninglineH);
@@ -295,6 +296,10 @@
 #pragma mark - - - set
 - (void)setScanAnimationStyle:(ScanAnimationStyle)scanAnimationStyle {
     _scanAnimationStyle = scanAnimationStyle;
+}
+
+- (void)setDefaultStyleLineHeight:(CGFloat)defaultStyleLineHeight {
+    _defaultStyleLineHeight = defaultStyleLineHeight;
 }
 
 - (void)setScanImageName:(NSString *)scanImageName {
