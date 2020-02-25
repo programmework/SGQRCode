@@ -151,6 +151,9 @@
 
     // 3、设置会话采集率
     self.captureSession.sessionPreset = configure.sessionPreset;
+    if ([self.captureSession canSetSessionPreset:AVCaptureSessionPreset1920x1080] == false) {
+        self.captureSession.sessionPreset = AVCaptureSessionPreset640x480;
+    }
     
     // 4(1)、添加捕获元数据输出流到会话对象
     [_captureSession addOutput:metadataOutput];
