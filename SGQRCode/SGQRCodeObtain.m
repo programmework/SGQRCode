@@ -150,7 +150,7 @@
     }
 
     // 3、设置会话采集率
-    if ([self.captureSession canSetSessionPreset:configure.sessionPreset] == true) {
+    if ([self.captureSession canSetSessionPreset:AVCaptureSessionPreset1920x1080] == true) {
         self.captureSession.sessionPreset = configure.sessionPreset;
     }else {
         self.captureSession.sessionPreset = AVCaptureSessionPresetHigh;
