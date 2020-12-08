@@ -151,9 +151,13 @@
 
     // 3、设置会话采集率
     if ([self.captureSession canSetSessionPreset:AVCaptureSessionPreset1920x1080] == true) {
-        self.captureSession.sessionPreset = configure.sessionPreset;
+        self.captureSession.sessionPreset = AVCaptureSessionPreset1920x1080;
+    }else if ([self.captureSession canSetSessionPreset:AVCaptureSessionPresetMedium] == true) {
+        self.captureSession.sessionPreset = AVCaptureSessionPresetMedium;
+    }else if ([self.captureSession canSetSessionPreset:AVCaptureSessionPreset640x480] == true) {
+        self.captureSession.sessionPreset = AVCaptureSessionPreset640x480;
     }else {
-        self.captureSession.sessionPreset = AVCaptureSessionPresetHigh;
+        self.captureSession.sessionPreset = AVCaptureSessionPresetLow;
     }
     
     // 4(1)、添加捕获元数据输出流到会话对象
